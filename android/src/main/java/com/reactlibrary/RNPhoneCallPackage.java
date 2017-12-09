@@ -11,9 +11,13 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
 public class RNPhoneCallPackage implements ReactPackage {
+
+    private RNPhoneCallModule phoneCallModule;
+
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-      return Arrays.<NativeModule>asList(new RNPhoneCallModule(reactContext));
+      phoneCallModule = new RNPhoneCallModule(reactContext);
+      return Arrays.<NativeModule>asList(phoneCallModule);
     }
 
     // Deprecated from RN 0.47
@@ -24,5 +28,9 @@ public class RNPhoneCallPackage implements ReactPackage {
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
       return Collections.emptyList();
+    }
+
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        phoneCallModule.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }
