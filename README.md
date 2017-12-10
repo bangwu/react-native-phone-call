@@ -3,7 +3,7 @@
 
 ## Getting started
 
-`$ npm install react-native-phone-call --save`
+`$ npm install bangwu/react-native-phone-call --save`
 
 ### Mostly automatic installation
 
