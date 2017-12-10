@@ -12,6 +12,10 @@
   ],
   "author": "",
   "license": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bangwu/react-native-phone-call.git"
+  },
   "peerDependencies": {
     "react-native": "^0.35.0",
     "react-native-windows": "0.41.0-rc.1"
