@@ -48,6 +48,9 @@
 import RNPhoneCall from 'react-native-phone-call';
 
 // TODO: What to do with the module?
-RNPhoneCall;
+// data schema { call_duration } call_duration is how long you call
+RNPhoneCall.call(mobile).then((data) => {
+      // do something
+    });
 ```
   
